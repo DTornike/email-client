@@ -56,32 +56,7 @@ npm run dev
 # Or using yarn
 yarn dev
 ```
-
 The project should now be running locally at [http://localhost:5173/](http://localhost:5173/).
-
-### 6. Build for Production
-To build the project for production, run:
-
-```sh
-# Using npm
-npm run build
-
-# Or using yarn
-yarn build
-```
-
-This will create a production-ready build in the `dist` folder.
-
-### 7. Preview Production Build
-To preview the production build locally, run:
-
-```sh
-# Using npm
-npm run preview
-
-# Or using yarn
-yarn preview
-```
 
 ## Available Scripts
 - **`npm run dev`**: Starts the development server.
