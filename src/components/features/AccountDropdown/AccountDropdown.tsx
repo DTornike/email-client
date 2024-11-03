@@ -10,11 +10,14 @@ import Tooltip from "@mui/material/Tooltip";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../utils/store/store.ts";
 
 export const AccountDropdown = () => {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+  const user = useSelector((state: RootState) => state.user);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -42,7 +45,9 @@ export const AccountDropdown = () => {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+            <Avatar sx={{ width: 32, height: 32, textTransform: "uppercase" }}>
+              {user.username?.slice(0, 1)}
+            </Avatar>
           </IconButton>
         </Tooltip>
       </Box>
@@ -84,7 +89,7 @@ export const AccountDropdown = () => {
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
+          <Avatar /> {user.username}
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}>

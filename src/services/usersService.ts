@@ -11,7 +11,17 @@ export const useUsersService = () => {
     }
   };
 
+  const getCurrentUser = async () => {
+    try {
+      const response = await axiosInstance.get("/users/current-user/");
+      return response.data;
+    } catch (error: unknown) {
+      return errorHandler(error);
+    }
+  };
+
   return {
     fetchUsers,
+    getCurrentUser,
   };
 };
