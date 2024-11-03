@@ -68,13 +68,13 @@ export const ViewEmailModal: React.FC<ViewEmailModalProps> = ({
           </Typography>
           <Typography variant="body1">{email.body}</Typography>
         </Box>
-        {email.attachment && (
+        {email.attachment_detail && (
           <Box mb={2}>
             <Typography variant="subtitle2" color="textSecondary">
               Attachments:
             </Typography>
             <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
-              <AttachmentPreviewFromUrl {...email.attachment} />
+              <AttachmentPreviewFromUrl {...email.attachment_detail} />
             </Box>
           </Box>
         )}

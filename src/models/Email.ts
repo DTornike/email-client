@@ -9,8 +9,8 @@ export interface Email {
   attachment?: string;
 }
 
-export interface EmailResponse extends Omit<Email, "attachment"> {
-  attachment?: {
+export interface EmailResponse extends Email {
+  attachment_detail?: {
     type: string;
     name: string;
     url: string;
