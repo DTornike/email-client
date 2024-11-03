@@ -94,7 +94,7 @@ yarn preview
     - **`pages/`**: Different pages of the application.
     - **`services/`**: API service methods.
     - **`models/`**: TypeScript types and interfaces used in the project.
-    - **`hooks/`**: Custom React hooks.
+    - **`utils/`**: Utils such as store/hooks/helpers.
 
 ## Important Notes
 - Ensure that the backend API is up and running before starting the client, and that the `VITE_API_URL` in your `.env` file points to the correct API endpoint.
